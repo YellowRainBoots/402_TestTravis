@@ -1,7 +1,7 @@
 matrix:
   include:
     - # require the branch name to be develop
-      if: branch = develop
+      # if: branch = develop
       language: node_js
       node_js: lts/*
       sudo: true
