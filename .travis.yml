@@ -3,17 +3,14 @@ matrix:
     - language: node_js
       node_js:
         - "9"
-
-    - language: node_js
-      node_js:
-        - "8"
+      script: echo test
 
     - os: osx
       language: objective-c
       osx_image: xcode9.4
       env:
         - JOB_NAME=IOS
-      script: yarn start
+      script: ./yarn start i
 
     - os: linux
       language: android
@@ -32,4 +29,4 @@ matrix:
           - extra-google-google_play_services
       env:
         - JOB_NAME=ANDROID
-      script: yarn start
+      script: ./yarn start a
