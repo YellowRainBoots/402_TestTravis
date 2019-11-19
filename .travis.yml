@@ -1,36 +1,18 @@
-before_install:
-  - npm install -g yarn --cache-min 999999999
-install:
-  - yarn
 
 matrix:
   include:
-    - language: node_js
-      node_js:
-        - "8"
-
-    - os: osx
-      language: objective-c
-      osx_image: xcode9.4
-      env:
-        - JOB_NAME=IOS
-      script: yarn start i
-
-    - os: linux
-      language: android
-      jdk: oraclejdk8
-      sudo: required
-      android:
-        components:
-          - platform-tools
-          - tools
-          - build-tools-26.0.3
-          - android-21
-          - android-26
-          - sys-img-armeabi-v7a-android-21
-          - extra-android-m2repository
-          - extra-google-m2repository
-          - extra-google-google_play_services
-      env:
-        - JOB_NAME=ANDROID
-      script: yarn start a
+    - # require the branch name to be develop
+      # if: branch = develop
+      language: node_js
+      node_js: lts/*
+      sudo: true
+      before_install:
+        - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+        - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+        - sudo apt-get update && sudo apt-get install yarn
+        - sudo npm install -g expo-cli@2.2.0
+        - expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
+      cache:
+        yarn: true
+      install:
+        - yarn install
