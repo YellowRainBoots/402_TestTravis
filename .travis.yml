@@ -10,7 +10,7 @@ matrix:
         - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
         - sudo apt-get update && sudo apt-get install yarn
         - npm install --unsafe-perm -g expo-cli
-        - expo login -u $myTestExpoUsername -p $myPassword
+        - expo login -u "myTestExpoUsername" -p "myPassword"
       cache:
         yarn: true
       install:
