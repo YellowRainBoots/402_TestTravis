@@ -3,19 +3,17 @@ matrix:
     - language: node_js
       node_js:
         - "9"
-      script: .travis/ci_node.sh
 
     - language: node_js
       node_js:
         - "8"
-      script: .travis/ci_node.sh
 
     - os: osx
       language: objective-c
       osx_image: xcode9.4
       env:
         - JOB_NAME=IOS
-      script: .travis/ci.sh
+      script: yarn start
 
     - os: linux
       language: android
@@ -34,4 +32,4 @@ matrix:
           - extra-google-google_play_services
       env:
         - JOB_NAME=ANDROID
-      script: .travis/ci.sh
+      script: yarn start
