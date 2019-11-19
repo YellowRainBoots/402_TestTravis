@@ -1,3 +1,8 @@
+before_install:
+  - npm install -g yarn --cache-min 999999999
+install:
+  - yarn
+
 matrix:
   include:
     - language: node_js
@@ -9,7 +14,7 @@ matrix:
       osx_image: xcode9.4
       env:
         - JOB_NAME=IOS
-      script: expo start i
+      script: yarn start i
 
     - os: linux
       language: android
@@ -28,4 +33,4 @@ matrix:
           - extra-google-google_play_services
       env:
         - JOB_NAME=ANDROID
-      script: expo start a
+      script: yarn start a
