@@ -7,7 +7,7 @@ matrix:
   include:
     - language: node_js
       node_js:
-        - "9"
+        - "8"
 
     - os: osx
       language: objective-c
