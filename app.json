@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "TestProj",
-    "slug": "TestProj",
+    "name": "VerticalPrototype_Test1",
+    "slug": "verticalprototype_test1",
     "privacy": "public",
     "sdkVersion": "35.0.0",
     "platforms": [
@@ -25,6 +25,7 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": ""
   }
 }
