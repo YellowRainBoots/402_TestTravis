@@ -12,6 +12,11 @@ export default abstract class MainScreen extends React.Component<NavigationProps
   
    /**Function will return contents relied for specific pages. Define this in Screen pages*/
    protected renderContents: () => any
+   
+   openPropertyPage = (arg0:number, arg1: any) => {
+      this.props.navigation.navigate('DetailedProperty', {itemId: arg0, details : arg1})
+      //this.props.navigation.
+   } 
 
    render(){
      return (
