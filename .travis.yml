@@ -13,7 +13,7 @@ jobs:
       - npm ci
       - npx jest --ci
 
-  include: #backend tests, python
+  #backend tests, python
     language: python
     python:
       - "3.7.4"
