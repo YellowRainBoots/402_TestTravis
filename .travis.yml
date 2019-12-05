@@ -20,4 +20,4 @@ jobs:
       install:
         - pip install -r unittests/requirements.txt
       script:
-        - python unittests/apitests.py
+        - unittests/runTests.sh

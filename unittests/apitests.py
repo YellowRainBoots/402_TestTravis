@@ -2,7 +2,7 @@
 # File Name : test.py
 # Created By : Adam Berard
 # Creation Date : 02-12-2019
-# Last Modified : Wed Dec  4 20:25:13 2019
+# Last Modified : Wed Dec  4 22:19:57 2019
 # Description:
 
 ################################################################################
@@ -129,7 +129,15 @@ class TestStringMethods(unittest.TestCase):
       assert info.get("pmInfo").get("password") == "pass4tommy"
       assert len(info.get("properties")) == 2
       assert info.get("properties")[0].get("address") == "200 North Santa Rosa Street"
+      assert info.get("properties")[0].get("SLID") == 1
       assert info.get("properties")[0].get("numBath") == 3
+      assert info.get("properties")[0].get("numBed") == 3
+      assert info.get("properties")[0].get("maxTenants") == 6
+      assert info.get("properties")[1].get("address") == "110 Orange Drive"
+      assert info.get("properties")[1].get("SLID") == 2
+      assert info.get("properties")[1].get("numBath") == 2
+      assert info.get("properties")[1].get("numBed") == 2
+      assert info.get("properties")[1].get("maxTenants") == 3
       assert info.get("roopairs") != "failure"
 
 if __name__ == '__main__':
