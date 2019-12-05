@@ -1,4 +1,4 @@
-matrix:
+jobs:
   include: #frontend tests, node_js
     language: node_js
     node_js:
@@ -12,6 +12,7 @@ matrix:
     script:
       - npm ci
       - npx jest --ci
+
   include: #backend tests, python
     language: python
     python:
